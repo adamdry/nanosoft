@@ -1,0 +1,69 @@
+
+Nano-Soft
+
+Background:
+The US Government have launched a cyber attack on Iranian nuclear power facilities. Unfortunately some unknown hackers got hold of the code for the virus and have converted it to attack web pages!
+
+Your job is to destory the Nano-Softs before they eat every web page!
+
+Aim of game:
+To destroy all the Nano-Softs before they eat the whole of the web page!
+
+
+Types of Nano-Soft and what they do:
+Controller - seeks the most inner dom elements, when it physically finds one it latches on and calls drones, it does 0.1 damage to the element itself per second
+Drones:
+Standard - aimlessly bumps into dom elements until a Controller has called it. Once called a drone will go into follow mode and go to the dom element the controller is latched on to. Does 1 damage to te element itself per second
+BeefCake - extra life, extra damage, slower to move
+Trojans - same as standard but when killed releases 5 standard drones
+
+
+
+Add into existing page:
+var oHead = document.getElementsByTagName('head').item(0);
+var oScript1 = document.createElement('script');
+oScript1.type = 'text/javascript';
+oScript1.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery-1.8.0.min.js';
+oHead.appendChild(oScript1);
+
+var oScript2 = document.createElement('script');
+oScript2.type = 'text/javascript';
+oScript2.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery.jsPlumb-1.3.16-all-min.js';
+oHead.appendChild(oScript2);
+
+var oScript3 = document.createElement('script');
+oScript3.type = 'text/javascript';
+oScript3.src='http://www.beautybykristi.co.uk/wsitstest/js/nanosoft.js';
+oHead.appendChild(oScript3);
+
+var oLink = document.createElement('link');
+oLink.rel = 'stylesheet';
+oLink.type = 'text/css';
+oLink.href = 'http://www.beautybykristi.co.uk/wsitstest/styles/nanosoftStyles.css';
+oHead.appendChild(oLink);
+
+setTimeout(function() {
+	jsPlumb.importDefaults({
+		Connector : ["Straight"],
+		Anchors : [ "TopCenter", "BottomCenter" ],
+		PaintStyle:{ lineWidth:0, strokeStyle: '#aaaaaa' },
+		Endpoint:[ "Dot", { radius:1 } ]
+	});
+
+	generateDrones(120);
+
+	setInterval(function() { controllerWorker.generateController(); }, 1000);
+}, 2000);
+
+
+book mark version: javascript:var%20oHead=document.getElementsByTagName('head').item(0);var%20oScript1=document.createElement('script');oScript1.type='text/javascript';oScript1.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery-1.8.0.min.js';oHead.appendChild(oScript1);var%20oScript2=document.createElement('script');oScript2.type='text/javascript';oScript2.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery.jsPlumb-1.3.16-all-min.js';oHead.appendChild(oScript2);var%20oScript3=document.createElement('script');oScript3.type='text/javascript';oScript3.src='http://www.beautybykristi.co.uk/wsitstest/js/nanosoft.js';oHead.appendChild(oScript3);var%20oLink=document.createElement('link');oLink.rel='stylesheet';oLink.type='text/css';oLink.href='http://www.beautybykristi.co.uk/wsitstest/styles/nanosoftStyles.css';oHead.appendChild(oLink);setTimeout(function(){jsPlumb.importDefaults({Connector:["Straight"],Anchors:["TopCenter","BottomCenter"],PaintStyle:{lineWidth:0,strokeStyle:'#aaaaaa'},Endpoint:["Dot",{radius:1}]});generateDrones(60);setInterval(function(){controllerWorker.generateController()},2500)},2000);void(0);
+
+
+commands:
+controllerWorker.generateController();
+
+generateDrones(3);
+
+
+Cache refresh:
+http://www.beautybykristi.co.uk/wsitstest/js/nanosoft.js

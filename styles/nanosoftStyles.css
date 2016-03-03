@@ -1,0 +1,61 @@
+.nanosoft {
+	width: 12px;
+	height: 12px;
+	position: absolute;
+}
+
+.droneStd {
+	background: url('../images/droneStd.png') no-repeat;
+}
+.droneLatched {
+	/*background: yellow;*/
+}
+.droneTargetAqd {
+	background: green;
+}
+.controller {
+	background: url('../images/controller.gif') no-repeat;
+}
+.controllerLatched {
+	background: url('../images/controllerLatched.gif') no-repeat;
+}
+.doingDamage {
+	background: red;
+}
+.deadTarget {
+	background: green;
+}
+.target {
+	/*background: #234636;*/
+}
+.targetHasLatchedNS {
+	border: 1px solid red !important;
+}
+
+#firstDiv {
+	position: absolute;
+	width: 100px;
+	top: 300px;
+	left: 500px;
+}
+
+#secDiv {
+	position: absolute;
+	width: 200px;
+	top: 200px;
+	left: 400px;
+}
+
+.latchPoint {
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	background: #ff0000;
+}
+
+.roamPoint {
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	background: #0000ff;
+}

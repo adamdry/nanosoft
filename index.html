@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/nanosoftStyles.css" />
+		
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+		<!--<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>-->
+		<script type="text/javascript" src="js/jquery.jsPlumb-1.3.16-all-min.js"></script>
+		<script type="text/javascript" src="js/nanosoft.js"></script>
+	</head>
+	<body>
+	
+		<script>
+			var testCount = 0;
+			function lineTest() {
+				if (testCount < 5) {
+					//jsPlumb.detachAllConnections('secDiv');
+					$('#secDiv').offset({top: $('#secDiv').offset().top - 20, left: $('#secDiv').offset().left - 20});
+					jsPlumb.connect({ source: 'firstDiv', target: 'secDiv' });
+					testCount++
+				}
+			}
+			$(document).ready(function() {
+				jsPlumb.importDefaults({
+					Connector : ["Straight"],
+					Anchors : [ "TopCenter", "BottomCenter" ],
+					PaintStyle:{ lineWidth:0, strokeStyle: '#aaaaaa' },
+					Endpoint:[ "Dot", { radius:1 } ]
+				});
+			
+				//var e0 = jsPlumb.addEndpoint("firstDiv");
+				//var e1 = jsPlumb.addEndpoint("secDiv");
+				//jsPlumb.connect({ source: 'firstDiv', target: 'secDiv' });
+				
+				//setInterval(lineTest, 1000);
+			});
+		</script>
+	
+		Welcome to NanoSoft! A game to play when you're bored! :)<br/>
+		<input type="button" value="Start Game" onclick="startGame();"></input>
+		<input type="button" value="Add Controller" onclick="controllerWorker.generateController();"></input>
+		<input type="button" value="Add 5 Drones" onclick="generateDrones(5);"></input>
+		<br/>
+		<br/>
+		<!--<div style="border: 1px solid black;" id="firstDiv">This is some content</div>-->
+		<div style="border: 1px solid black;" id="secDiv">This is some content 2
+			<div style="border: 3px solid blue">
+				INNER
+				<div style="border: 3px solid blue">
+					INNER2
+					<div style="border: 3px solid blue">
+						INNER3
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div style="border: 1px solid black;" id="div3">This is some content 3</div><br/>
+		<div style="border: 1px solid black;">This is some content 3</div><br/>
+		<div style="border: 1px solid black;">This is some content 3</div><br/>
+		<div style="border: 1px solid black;">This is some content 3</div><br/>
+		<div style="border: 1px solid black;">This is some content 3</div><br/>-->
+		
+		<!--<div class="nanosoft controller"/>-->
+		
+		<!--<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<defs>
+				<radialGradient id="controller" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+					<stop offset="0%" style="stop-color:rgb(255,255,255); stop-opacity:0" />
+					<stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+				</radialGradient>
+				<radialGradient id="controllerLatched" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+					<stop offset="0%" style="stop-color:rgb(255,0,0); stop-opacity:0" />
+					<stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+				</radialGradient>
+				<radialGradient id="droneStd" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+					<stop offset="0%" style="stop-color:rgb(255,255,255); stop-opacity:0" />
+					<stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+				</radialGradient>
+		  </defs>
+		  <ellipse cx="200" cy="70" rx="6" ry="6" fill="url(#controller)" />
+		  <ellipse cx="180" cy="70" rx="6" ry="6" fill="url(#controllerLatched)" />
+		  <ellipse cx="160" cy="70" rx="6" ry="6" fill="url(#droneStd)" />
+		  
+		  <ellipse cx="0" cy="0" rx="6" ry="6" fill="url(#droneStd)" />
+		</svg>-->
+		
+	</body>
+</html>
