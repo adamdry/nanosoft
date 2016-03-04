@@ -53,7 +53,7 @@ setTimeout(function() {
 
 setTimeout(function() {
 
-	generateDrones(120);
+	generateDrones(60);
 
 	setInterval(function() { controllerWorker.generateController(); }, 1000);
 }, 2000);
