@@ -14,7 +14,8 @@
 			function lineTest() {
 				if (testCount < 5) {
 					//jsPlumb.detachAllConnections('secDiv');
-					$('#secDiv').offset({top: $('#secDiv').offset().top - 20, left: $('#secDiv').offset().left - 20});
+					var $secDiv = $('#secDiv');
+                    $secDiv.offset({top: $secDiv.offset().top - 20, left: $secDiv.offset().left - 20});
 					jsPlumb.connect({ source: 'firstDiv', target: 'secDiv' });
 					testCount++
 				}
@@ -27,18 +28,18 @@
 					Endpoint:[ "Dot", { radius:1 } ]
 				});
 			
-				//var e0 = jsPlumb.addEndpoint("firstDiv");
-				//var e1 = jsPlumb.addEndpoint("secDiv");
-				//jsPlumb.connect({ source: 'firstDiv', target: 'secDiv' });
-				
-				//setInterval(lineTest, 1000);
+//				var e0 = jsPlumb.addEndpoint("firstDiv");
+//				var e1 = jsPlumb.addEndpoint("secDiv");
+//				jsPlumb.connect({ source: 'firstDiv', target: 'secDiv' });
+//
+//				setInterval(lineTest, 1000);
 			});
 		</script>
 	
 		Welcome to NanoSoft! A game to play when you're bored! :)<br/>
-		<input type="button" value="Start Game" onclick="startGame();"></input>
-		<input type="button" value="Add Controller" onclick="controllerWorker.generateController();"></input>
-		<input type="button" value="Add 5 Drones" onclick="generateDrones(5);"></input>
+		<input type="button" value="Start Game" onclick="startGame();" />
+		<input type="button" value="Add Controller" onclick="controllerWorker.generateController();" />
+		<input type="button" value="Add 5 Drones" onclick="generateDrones(5);" />
 		<br/>
 		<br/>
 		<!--<div style="border: 1px solid black;" id="firstDiv">This is some content</div>-->

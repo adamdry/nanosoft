@@ -6,6 +6,7 @@ var roamPointIdCounter = 0;
 var inited = false;
 
 // constants
+var enableDroneLines = true;
 var moveValue = 4;
 var moveActionerInterval = 20;
 var damageActionerInterval = 400;
@@ -136,12 +137,12 @@ function generateDrone() {
 }
 function disconnectNanoSoft(ns) {
 	var eleId = ns.attr('id');
-	//jsPlumb.detachAllConnections(eleId);
+	if (enableDroneLines) { jsPlumb.detachAllConnections(eleId); }
 }
 function connectNanoSoftToTarget(ns, target) {
 	var nsEleId = ns.attr('id');
 	var targetEleId = target.attr('id');
-	//jsPlumb.connect({ source: nsEleId, target: targetEleId });
+	if (enableDroneLines) { jsPlumb.connect({ source: nsEleId, target: targetEleId }); }
 }
 function droneMoveActioner(drone) {
 	
@@ -190,7 +191,7 @@ function droneMoveActioner(drone) {
 			
 			/*if (!roaming) { disconnectNanoSoft(drone); }*/
 			drone.offset({left: hMovement.leftOrTop, top: vMovement.leftOrTop});
-			//if (!roaming) { jsPlumb.repaint(drone.attr('id')); }
+			if (enableDroneLines) { if (!roaming) { jsPlumb.repaint(drone.attr('id')); } }
 			/*if (!roaming) { connectNanoSoftToTarget(drone, target); }*/
 			
 			if (vMovement.arrived && hMovement.arrived) {
@@ -272,8 +273,8 @@ function identTargets_Recur(list) {
 			console.log('targetCount: ' + targetCount);*/
 			target.addClass('target');
 			targets[targetCount] = target;
-			console.log('target: ' + targetCount);
-			console.log(targets[targetCount]);
+			//console.log('target: ' + targetCount);
+			//console.log(targets[targetCount]);
 			targetCount++;
 		}		
 	});
@@ -381,7 +382,7 @@ function setLatchPointOnTarget(ns, target) {
 		latchPoint.top = targetPosMetrics.top + rndNum;
 	}
 	else {
-		console.log('NONE is closest');
+		//console.log('NONE is closest');
 		latchPoint.top = target.offset().top;
 		latchPoint.left = target.offset().left;
 	}
