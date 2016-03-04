@@ -23,23 +23,23 @@ Add into existing page:
 var oHead = document.getElementsByTagName('head').item(0);
 var oScript1 = document.createElement('script');
 oScript1.type = 'text/javascript';
-oScript1.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery-1.8.0.min.js';
+oScript1.src='http://sirfixalotcars.com/js/NanoSoft/js/jquery-1.8.0.min.js';
 oHead.appendChild(oScript1);
 
 var oScript2 = document.createElement('script');
 oScript2.type = 'text/javascript';
-oScript2.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery.jsPlumb-1.3.16-all-min.js';
+oScript2.src='http://sirfixalotcars.com/js/NanoSoft/js/jquery.jsPlumb-1.3.16-all-min.js';
 oHead.appendChild(oScript2);
 
 var oScript3 = document.createElement('script');
 oScript3.type = 'text/javascript';
-oScript3.src='http://www.beautybykristi.co.uk/wsitstest/js/nanosoft.js';
+oScript3.src='http://sirfixalotcars.com/js/NanoSoft/js/nanosoft.js';
 oHead.appendChild(oScript3);
 
 var oLink = document.createElement('link');
 oLink.rel = 'stylesheet';
 oLink.type = 'text/css';
-oLink.href = 'http://www.beautybykristi.co.uk/wsitstest/styles/nanosoftStyles.css';
+oLink.href = 'http://sirfixalotcars.com/js/NanoSoft/styles/nanosoftStyles.css';
 oHead.appendChild(oLink);
 
 setTimeout(function() {
@@ -49,6 +49,9 @@ setTimeout(function() {
 		PaintStyle:{ lineWidth:0, strokeStyle: '#aaaaaa' },
 		Endpoint:[ "Dot", { radius:1 } ]
 	});
+}, 2000);
+
+setTimeout(function() {
 
 	generateDrones(120);
 
@@ -56,8 +59,8 @@ setTimeout(function() {
 }, 2000);
 
 
-book mark version: javascript:var%20oHead=document.getElementsByTagName('head').item(0);var%20oScript1=document.createElement('script');oScript1.type='text/javascript';oScript1.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery-1.8.0.min.js';oHead.appendChild(oScript1);var%20oScript2=document.createElement('script');oScript2.type='text/javascript';oScript2.src='http://www.beautybykristi.co.uk/wsitstest/js/jquery.jsPlumb-1.3.16-all-min.js';oHead.appendChild(oScript2);var%20oScript3=document.createElement('script');oScript3.type='text/javascript';oScript3.src='http://www.beautybykristi.co.uk/wsitstest/js/nanosoft.js';oHead.appendChild(oScript3);var%20oLink=document.createElement('link');oLink.rel='stylesheet';oLink.type='text/css';oLink.href='http://www.beautybykristi.co.uk/wsitstest/styles/nanosoftStyles.css';oHead.appendChild(oLink);setTimeout(function(){jsPlumb.importDefaults({Connector:["Straight"],Anchors:["TopCenter","BottomCenter"],PaintStyle:{lineWidth:0,strokeStyle:'#aaaaaa'},Endpoint:["Dot",{radius:1}]});generateDrones(60);setInterval(function(){controllerWorker.generateController()},2500)},2000);void(0);
-
+book mark version:
+javascript:var%20oHead=document.getElementsByTagName('head').item(0);var%20oScript1=document.createElement('script');oScript1.type='text/javascript';oScript1.src='http://sirfixalotcars.com/js/NanoSoft/js/jquery-1.8.0.min.js';oHead.appendChild(oScript1);var%20oScript2=document.createElement('script');oScript2.type='text/javascript';oScript2.src='http://sirfixalotcars.com/js/NanoSoft/js/jquery.jsPlumb-1.3.16-all-min.js';oHead.appendChild(oScript2);var%20oScript3=document.createElement('script');oScript3.type='text/javascript';oScript3.src='http://sirfixalotcars.com/js/NanoSoft/js/nanosoft.js';oHead.appendChild(oScript3);var%20oLink=document.createElement('link');oLink.rel='stylesheet';oLink.type='text/css';oLink.href='http://sirfixalotcars.com/js/NanoSoft/styles/nanosoftStyles.css';oHead.appendChild(oLink);setTimeout(function(){jsPlumb.importDefaults({Connector:["Straight"],Anchors:["TopCenter","BottomCenter"],PaintStyle:{lineWidth:0,strokeStyle:'#aaaaaa'},Endpoint:["Dot",{radius:1}]});generateDrones(60);setInterval(function(){controllerWorker.generateController()},2500)},2000);void(0);
 
 commands:
 controllerWorker.generateController();
@@ -66,4 +69,4 @@ generateDrones(3);
 
 
 Cache refresh:
-http://www.beautybykristi.co.uk/wsitstest/js/nanosoft.js
+http://sirfixalotcars.com/js/NanoSoft/js/nanosoft.js
